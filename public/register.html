@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - Blood Bank Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            🩸 Blood Bank
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+        </div>
+
+    </nav>
+
+
+    <!-- Registration Section -->
+    <section class="form-section">
+
+        <div class="form-container">
+
+            <h1>Create Account</h1>
+
+            <p class="form-subtitle">
+                Register with the Blood Bank Management System
+            </p>
+
+
+            <form id="registerForm">
+
+                <!-- Name -->
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Email -->
+                <div class="form-group">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Phone -->
+                <div class="form-group">
+
+                    <label for="phone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        maxlength="15"
+                    >
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create a password"
+                        minlength="6"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Role -->
+                <div class="form-group">
+
+                    <label for="role">
+                        Register As
+                    </label>
+
+                    <select id="role" required>
+
+                        <option value="">
+                            Select Role
+                        </option>
+
+                        <option value="donor">
+                            Donor
+                        </option>
+
+                        <option value="recipient">
+                            Recipient
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Donor Details -->
+
+<div id="donorDetails" style="display: none;">
+
+    <div class="form-group">
+
+        <label for="bloodGroup">
+            Blood Group
+        </label>
+
+        <select id="bloodGroup">
+
+            <option value="">
+                Select Blood Group
+            </option>
+
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="age">
+            Age
+        </label>
+
+        <input
+            type="number"
+            id="age"
+            placeholder="Enter your age"
+            min="18"
+            max="100"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="gender">
+            Gender
+        </label>
+
+        <select id="gender">
+
+            <option value="">
+                Select Gender
+            </option>
+
+            <option value="Male">
+                Male
+            </option>
+
+            <option value="Female">
+                Female
+            </option>
+
+            <option value="Other">
+                Other
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="address">
+            Address
+        </label>
+
+        <input
+            type="text"
+            id="address"
+            placeholder="Enter your address"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- Recipient Details -->
+
+<div id="recipientDetails" style="display: none;">
+
+    <div class="form-group">
+
+        <label for="requiredBloodGroup">
+            Blood Group Required
+        </label>
+
+        <select id="requiredBloodGroup">
+
+            <option value="">
+                Select Blood Group
+            </option>
+
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+
+        </select>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="recipientAge">
+            Age
+        </label>
+
+        <input
+            type="number"
+            id="recipientAge"
+            placeholder="Enter your age"
+            min="1"
+            max="120"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="hospital">
+            Hospital
+        </label>
+
+        <input
+            type="text"
+            id="hospital"
+            placeholder="Enter hospital name"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="recipientAddress">
+            Address
+        </label>
+
+        <input
+            type="text"
+            id="recipientAddress"
+            placeholder="Enter your address"
+        >
+
+    </div>
+
+</div>
+
+
+                <!-- Submit -->
+                <button
+                    type="submit"
+                    class="form-button"
+                >
+                    Create Account
+                </button>
+
+
+                <!-- Message -->
+                <p id="registerMessage"></p>
+
+            </form>
+
+
+            <p class="login-link">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login here
+                </a>
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            © 2026 Blood Bank Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>

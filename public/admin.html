@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - Blood Bank</title>
+
+    <link rel="stylesheet"
+        href="css/style.css">
+
+</head>
+
+<body class="admin-page">
+
+    <header class="admin-header">
+
+        <h1>Blood Bank Management System</h1>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </header>
+
+
+    <main class="admin-main">
+
+        <h2>Admin Dashboard</h2>
+
+        <p id="adminWelcome">
+            Welcome Admin
+        </p>
+
+
+        <!-- =================================
+             DASHBOARD STATISTICS
+        ================================== -->
+
+        <section class="dashboard-stats">
+
+            <div class="stat-card">
+
+                <h3>Total Users</h3>
+
+                <p id="totalUsers">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Total Donors</h3>
+
+                <p id="totalDonors">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Total Recipients</h3>
+
+                <p id="totalRecipients">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <h3>Pending Requests</h3>
+
+                <p id="pendingRequests">
+                    0
+                </p>
+
+            </div>
+
+
+            <div class="stat-card">
+    <h3>Total Blood Stock</h3>
+    <p id="totalBloodStock">0</p>
+</div>
+
+<div class="stat-card">
+    <h3>Approved Donations</h3>
+    <p id="approvedDonations">0</p>
+</div>
+
+        </section>
+
+
+        <!-- =================================
+             BLOOD STOCK
+        ================================== -->
+
+        <section class="admin-section">
+
+            <h2>Blood Stock</h2>
+
+            <div id="adminBloodStock"
+                 class="blood-stock-container">
+
+                Loading blood stock...
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             PENDING DONATIONS
+        ================================== -->
+
+        <section class="admin-section">
+
+            <h2>Pending Donations</h2>
+
+            <div id="pendingDonations">
+
+                Loading pending donations...
+
+            </div>
+
+        </section>
+        <section class="admin-section">
+    <h2>Scheduled Donations</h2>
+    <div id="scheduledDonations">
+        Loading scheduled donations...
+    </div>
+</section>
+
+
+<section class="admin-section">
+    <h2>Donation History</h2>
+
+    <div id="donationHistory">
+        Loading donation history...
+    </div>
+</section>
+
+
+        <section class="admin-section">
+    <h2>Pending Blood Requests</h2>
+
+    <div id="pendingBloodRequests">
+        Loading pending blood requests...
+    </div>
+</section>
+
+
+        <!-- =================================
+             ADMIN MESSAGE
+        ================================== -->
+
+        <p id="adminMessage"></p>
+
+    </main>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - Blood Bank Management System</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🩸 Blood Bank
+        </div>
+
+        <div class="nav-links">
+
+            <a href="#" onclick="logout()">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+
+    <main class="dashboard">
+
+        <div class="dashboard-header">
+
+            <h1 id="welcomeMessage">
+                Welcome
+            </h1>
+
+            <p id="roleMessage"></p>
+
+        </div>
+
+
+        <!-- User Information -->
+
+        <section class="dashboard-card">
+
+            <h2>My Profile</h2>
+
+            <div class="profile-info">
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="userName"></span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="userEmail"></span>
+                </p>
+
+                <p>
+                    <strong>Phone:</strong>
+                    <span id="userPhone"></span>
+                </p>
+
+                <p>
+                    <strong>Role:</strong>
+                    <span id="userRole"></span>
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Features -->
+
+        <section class="dashboard-features">
+
+            <div
+                class="dashboard-feature"
+                id="donorFeature"
+            >
+
+                <div class="feature-icon">
+                    🩸
+                </div>
+
+                <h3>
+                    Donor Services
+                </h3>
+
+                <p>
+                    Manage your donations and
+                    donor information.
+                </p>
+
+                <button
+                    class="dashboard-button"
+                    onclick="showComingSoon('Donor Services')"
+                >
+                    Open
+                </button>
+
+            </div>
+
+
+            <div
+                class="dashboard-feature"
+                id="recipientFeature"
+            >
+
+                <div class="feature-icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Blood Requests
+                </h3>
+
+                <p>
+                    Request blood and track
+                    your requests.
+                </p>
+
+                <button
+                    class="dashboard-button"
+                    onclick="showComingSoon('Blood Requests')"
+                >
+                    Open
+                </button>
+
+            </div>
+
+
+            <div
+                class="dashboard-feature"
+                id="adminFeature"
+            >
+
+                <div class="feature-icon">
+                    👨‍💼
+                </div>
+
+                <h3>
+                    Admin Panel
+                </h3>
+
+                <p>
+                    Manage blood stock, users,
+                    donations and requests.
+                </p>
+
+                <button
+                    class="dashboard-button"
+                    onclick="showComingSoon('Admin Panel')"
+                >
+                    Open
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-feature">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    Blood Stock
+                </h3>
+
+                <p>
+                    Check available blood
+                    group quantities.
+                </p>
+
+                <button
+                    class="dashboard-button"
+                    onclick="showComingSoon('Blood Stock')"
+                >
+                    View Stock
+                </button>
+
+            </div>
+
+        </section>
+        <!-- Blood Stock Section -->
+
+<section>
+    <h2>Search Blood Availability</h2>
+
+    <label for="donorSearchBloodGroup">
+        Select Blood Group
+    </label>
+
+    <select id="donorSearchBloodGroup">
+        <option value="">All Blood Groups</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+    </select>
+
+    <button type="button" id="donorSearchBloodButton">
+        Search
+    </button>
+
+    <p id="donorBloodSearchMessage"></p>
+
+    <h2>Available Blood Stock</h2>
+
+    <div id="bloodStock"
+         class="blood-stock-container">
+        Loading blood stock...
+    </div>
+</section>
+        <!-- Donor Donation Section -->
+
+<section
+    id="donationSection"
+    class="dashboard-card"
+    style="display: none;"
+>
+
+    <h2>Donate Blood</h2>
+
+    <p>
+        Submit your blood donation details below.
+    </p>
+
+
+    <form id="donationForm">
+
+        <div class="form-group">
+
+            <label for="donationQuantity">
+                Quantity (units)
+            </label>
+
+            <input
+                type="number"
+                id="donationQuantity"
+                min="1"
+                max="5"
+                placeholder="Enter quantity"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="donationDate">
+                Donation Date
+            </label>
+
+            <input
+                type="date"
+                id="donationDate"
+                required
+            >
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="form-button"
+        >
+            Submit Donation
+        </button>
+
+
+        <p id="donationMessage"></p>
+
+    </form>
+
+</section>
+
+
+<!-- Donation History -->
+
+<section
+    id="donationHistorySection"
+    class="dashboard-card"
+    style="display: none;"
+>
+
+    <h2>Donation History</h2>
+
+
+    <div id="donationHistory">
+
+        <p>
+            Loading donation history...
+        </p>
+
+    </div>
+
+</section>
+
+
+        <!-- Message -->
+
+        <div
+            id="dashboardMessage"
+            class="dashboard-message"
+        ></div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 Blood Bank Management System
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
